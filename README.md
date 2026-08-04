@@ -128,7 +128,7 @@ cd PEPLER
 ### 4. SVD Analysis
    To verify the modality independence and spectral distribution:
 ```
-python analysis.py
+python analysis.py --dataset_name ClothingShoesAndJewelry
 ```
 
 ## 📝 Citation
