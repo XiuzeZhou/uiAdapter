@@ -21,6 +21,7 @@ Recommendation paradigms are revised from their original projects:
 Organize the data as follows:
 ```
 ├── CIER/
+|   ├── analysis_results/
 |   ├── checkpoints/
 │   ├── logs/
 │   ├── shell/
@@ -32,6 +33,7 @@ Organize the data as follows:
 │   ├── rouge.py
 │   └── utils.py
 ├── PEPLER/
+|   ├── analysis_results/
 |   ├── checkpoints/
 │   ├── logs/
 │   ├── shell/
