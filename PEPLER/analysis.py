@@ -240,10 +240,11 @@ if __name__ == '__main__':
     import argparse
     
     parser = argparse.ArgumentParser(description='User-Item Adapter for LLM-based Explainable Recommendation Systems (uiAdapter)')
+    parser.add_argument('-dataset_name', type=str, default='ClothingShoesAndJewelry')
     parser.add_argument('-data_path', '--data_path', type=str, default='./data/ClothingShoesAndJewelry/reviews.pickle')
     parser.add_argument('-index_dir', '--index_dir', type=str, default='./data/ClothingShoesAndJewelry/1/')
-    parser.add_argument('-llm_model', '--llm_model', type=str, default="../autodl-fs/Qwen2.5-7B/")
-    parser.add_argument('-checkpoint', '--checkpoint', type=str, default='../autodl-tmp/models/')
+    parser.add_argument('-llm_model', '--llm_model', type=str, default="../llms/Qwen2.5-7B/")
+    parser.add_argument('-checkpoint', '--checkpoint', type=str, default='./checkpoints/')
     parser.add_argument('-batch_size', '--batch_size', type=int, default=16)
     parser.add_argument('-words', '--words', type=int, default=20)
     parser.add_argument('-mlp_size', '--mlp_size', type=int, default=400)
@@ -287,7 +288,7 @@ if __name__ == '__main__':
     )
     model.resize_token_embeddings(len(tokenizer))
     
-    model_path = os.path.join(args.checkpoint, 'ClothingShoesAndJewelry', 'model.pt')
+    model_path = os.path.join(args.checkpoint, args.dataset_name, 'model.pt')
     if os.path.exists(model_path):
         print(now_time() + f"load the pretrained weights from: {model_path}")
         loaded_state = torch.load(model_path, map_location=device)
@@ -295,7 +296,7 @@ if __name__ == '__main__':
         print(now_time() + f'Successfully loaded trainable parameters from {model_path}')
         model = model.to(device)
     else:
-        print(now_time() + "WARNING: Can not find checkpoint!")
+        print(now_time() + f"WARNING: Can not find checkpoint: {model_path}")
         
     model.to(device)
 
