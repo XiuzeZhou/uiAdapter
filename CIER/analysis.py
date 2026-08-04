@@ -46,12 +46,12 @@ parser.add_argument('--only_eval', action='store_true')
 
 parser.add_argument('--dataset_name', default='ClothingShoesAndJewelry', type=str)
 parser.add_argument('--data_dir', default='./data/', type=str)
-parser.add_argument('--model_name', default='../autodl-fs/Qwen2.5-7B/', type=str)
-parser.add_argument('--ckpt_dir', default='../autodl-tmp/models/qwen/', type=str)
+parser.add_argument('--model_name', default='../llms/Qwen2.5-7B/', type=str)
+parser.add_argument('--ckpt_dir', default='./checkpoints/', type=str)
 parser.add_argument('--log_dir', default='./log/', type=str)
-parser.add_argument('--log_name', default='llama.log', type=str)
+parser.add_argument('--log_name', default='train.log', type=str)
 parser.add_argument('--output_dir', default='./output/', type=str)
-parser.add_argument('--use_moe', action='store_false', help='Use uiLoRA MoE Architecture')
+parser.add_argument('--use_uiadapter', action='store_false', help='Use uiLoRA MoE Architecture')
 parser.add_argument('--lora_modules', type=int, default=2, help='number of modules for LoRA')
 parser.add_argument('--r', type=int, default=4, help='rank for LoRA')
 parser.add_argument('--expert_num', type=int, default=4, help='the number of experts')
@@ -143,7 +143,7 @@ for split_index in ['1']:
     )
     model_llm.gradient_checkpointing_enable()
 
-    if args.use_moe:
+    if args.use_uiadapter:
         model = uiAdapter(
             user_num=user_num, 
             item_num=item_num, 
@@ -170,7 +170,7 @@ for split_index in ['1']:
     model.rating_weight = args.rating_weight
 
     param = list(filter(lambda p: p.requires_grad==True, model.prompt_encoder.parameters()))
-    if args.use_moe:
+    if args.use_uiadapter:
         param += list(filter(lambda p: p.requires_grad==True, model.f_ui.parameters()))
         
     param2 = filter(lambda p: p.requires_grad==True, model.model.parameters())
@@ -183,8 +183,8 @@ for split_index in ['1']:
     best_loss = 999
     early_stop = 1
 
-    if args.use_moe:
-        moe_ckpt_path = os.path.join(args.ckpt_dir, args.dataset_name, f'{split_index}moe_model.pth')
+    if args.use_uiadapter:
+        moe_ckpt_path = os.path.join(args.ckpt_dir, args.dataset_name, f'{split_index}_model.pth')
         torch.cuda.empty_cache()
         model.load_state_dict(torch.load(moe_ckpt_path, map_location="cpu"), strict=False)
     else:
