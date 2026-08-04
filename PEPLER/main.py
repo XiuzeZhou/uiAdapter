@@ -28,7 +28,7 @@ parser.add_argument('-cuda', '--cuda', action='store_true',
                     help='use CUDA')
 parser.add_argument('-log_interval', type=int, default=200,
                     help='report interval')
-parser.add_argument('-checkpoint', '--checkpoint', type=str, default='./recllm/',
+parser.add_argument('-checkpoint', '--checkpoint', type=str, default='./checkpoint/',
                     help='directory to save the final model')
 parser.add_argument('-outf', '--outf', type=str, default='generated.txt',
                     help='output file for generated text')
