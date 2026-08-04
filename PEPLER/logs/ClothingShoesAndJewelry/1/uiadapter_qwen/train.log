@@ -1,0 +1,169 @@
+----------------------------------------ARGUMENTS----------------------------------------
+data_path                                ./data/ClothingShoesAndJewelry/reviews.pickle
+index_dir                                ./data/ClothingShoesAndJewelry/1/
+llm_model                                ../autodl-fs/Qwen2.5-7B/
+model_type                               uiadapter
+lr                                       2e-07
+epochs                                   1
+batch_size                               16
+cuda                                     True
+log_interval                             200
+checkpoint                               ../autodl-tmp/models/ClothingShoesAndJewelry/uiadapter_qwen/
+outf                                     ./outputs/ClothingShoesAndJewelry/1/uiadapter_qwen/generated.txt
+endure_times                             1
+words                                    20
+rating_reg                               0.01
+bal_reg                                  0.1
+mlp_size                                 400
+k                                        768
+r                                        8
+expert_number                            4
+top_k                                    2
+lora_modules                             7
+clip_norm                                1.0
+acc_steps                                1
+seed                                     1111
+----------------------------------------ARGUMENTS----------------------------------------
+[2026-08-04 11:53:21.695889]: Loading data
+
+--- Trainable Parameters Summary (LLM base) ---
+Total parameters: 7,775,749,667
+Trainable parameters (LoRA + Embeddings): 160,133,155
+Trainable ratio: 2.06%
+------------------------------------
+================================================================================
+[2026-08-04 11:54:19.964969]: Tuning LLM with LoRA (Architecture: UIADAPTER)
+[2026-08-04 11:54:19.965008]: epoch 1
+[2026-08-04 11:56:33.318882]: text ppl 360.3044 | rating loss 0.1717 | bal loss 2.0122 |   200/ 8962 batches
+[2026-08-04 11:58:45.852709]: text ppl 87.9657 | rating loss 0.1671 | bal loss 2.0118 |   400/ 8962 batches
+[2026-08-04 12:00:58.679522]: text ppl 55.9936 | rating loss 0.1681 | bal loss 2.0124 |   600/ 8962 batches
+[2026-08-04 12:03:11.877024]: text ppl 47.6894 | rating loss 0.1724 | bal loss 2.0115 |   800/ 8962 batches
+[2026-08-04 12:05:25.414330]: text ppl 46.1811 | rating loss 0.1679 | bal loss 2.0110 |  1000/ 8962 batches
+[2026-08-04 12:07:39.630162]: text ppl 40.9263 | rating loss 0.1684 | bal loss 2.0119 |  1200/ 8962 batches
+[2026-08-04 12:09:54.061810]: text ppl 38.0503 | rating loss 0.1629 | bal loss 2.0108 |  1400/ 8962 batches
+[2026-08-04 12:12:08.469216]: text ppl 33.1908 | rating loss 0.1650 | bal loss 2.0106 |  1600/ 8962 batches
+[2026-08-04 12:14:21.873933]: text ppl 31.0976 | rating loss 0.1660 | bal loss 2.0111 |  1800/ 8962 batches
+[2026-08-04 12:16:35.305256]: text ppl 30.7530 | rating loss 0.1602 | bal loss 2.0110 |  2000/ 8962 batches
+[2026-08-04 12:18:49.063289]: text ppl 27.8727 | rating loss 0.1611 | bal loss 2.0107 |  2200/ 8962 batches
+[2026-08-04 12:21:03.090076]: text ppl 28.7093 | rating loss 0.1627 | bal loss 2.0105 |  2400/ 8962 batches
+[2026-08-04 12:23:17.079612]: text ppl 28.6408 | rating loss 0.1616 | bal loss 2.0103 |  2600/ 8962 batches
+[2026-08-04 12:25:30.746262]: text ppl 27.6881 | rating loss 0.1601 | bal loss 2.0106 |  2800/ 8962 batches
+[2026-08-04 12:27:44.157596]: text ppl 27.5367 | rating loss 0.1608 | bal loss 2.0106 |  3000/ 8962 batches
+[2026-08-04 12:29:58.196042]: text ppl 26.9117 | rating loss 0.1580 | bal loss 2.0105 |  3200/ 8962 batches
+[2026-08-04 12:32:12.376621]: text ppl 27.2926 | rating loss 0.1586 | bal loss 2.0104 |  3400/ 8962 batches
+[2026-08-04 12:34:25.471352]: text ppl 26.0360 | rating loss 0.1537 | bal loss 2.0107 |  3600/ 8962 batches
+[2026-08-04 12:36:38.822390]: text ppl 25.8561 | rating loss 0.1562 | bal loss 2.0105 |  3800/ 8962 batches
+[2026-08-04 12:38:51.681285]: text ppl 26.2586 | rating loss 0.1542 | bal loss 2.0106 |  4000/ 8962 batches
+[2026-08-04 12:41:05.015543]: text ppl 25.8332 | rating loss 0.1522 | bal loss 2.0103 |  4200/ 8962 batches
+[2026-08-04 12:43:18.504434]: text ppl 26.4167 | rating loss 0.1529 | bal loss 2.0106 |  4400/ 8962 batches
+[2026-08-04 12:45:31.957713]: text ppl 26.0368 | rating loss 0.1493 | bal loss 2.0104 |  4600/ 8962 batches
+[2026-08-04 12:47:44.781262]: text ppl 25.2573 | rating loss 0.1483 | bal loss 2.0107 |  4800/ 8962 batches
+[2026-08-04 12:49:58.033909]: text ppl 24.5015 | rating loss 0.1539 | bal loss 2.0106 |  5000/ 8962 batches
+[2026-08-04 12:52:11.225451]: text ppl 25.9500 | rating loss 0.1502 | bal loss 2.0104 |  5200/ 8962 batches
+[2026-08-04 12:54:24.970537]: text ppl 26.0288 | rating loss 0.1502 | bal loss 2.0105 |  5400/ 8962 batches
+[2026-08-04 12:56:38.860688]: text ppl 25.1278 | rating loss 0.1497 | bal loss 2.0106 |  5600/ 8962 batches
+[2026-08-04 12:58:52.735786]: text ppl 25.2179 | rating loss 0.1464 | bal loss 2.0105 |  5800/ 8962 batches
+[2026-08-04 13:01:06.196344]: text ppl 25.3992 | rating loss 0.1421 | bal loss 2.0106 |  6000/ 8962 batches
+[2026-08-04 13:03:19.313948]: text ppl 25.4010 | rating loss 0.1423 | bal loss 2.0108 |  6200/ 8962 batches
+[2026-08-04 13:05:31.971023]: text ppl 24.6570 | rating loss 0.1320 | bal loss 2.0113 |  6400/ 8962 batches
+[2026-08-04 13:07:45.156133]: text ppl 25.1056 | rating loss 0.1446 | bal loss 2.0103 |  6600/ 8962 batches
+[2026-08-04 13:09:58.148076]: text ppl 25.4155 | rating loss 0.1432 | bal loss 2.0100 |  6800/ 8962 batches
+[2026-08-04 13:12:11.594341]: text ppl 24.2993 | rating loss 0.1408 | bal loss 2.0104 |  7000/ 8962 batches
+[2026-08-04 13:14:25.387726]: text ppl 24.7443 | rating loss 0.1370 | bal loss 2.0109 |  7200/ 8962 batches
+[2026-08-04 13:16:38.930524]: text ppl 25.1374 | rating loss 0.1404 | bal loss 2.0098 |  7400/ 8962 batches
+[2026-08-04 13:18:51.838618]: text ppl 25.4171 | rating loss 0.1440 | bal loss 2.0102 |  7600/ 8962 batches
+[2026-08-04 13:21:04.889703]: text ppl 25.3194 | rating loss 0.1388 | bal loss 2.0102 |  7800/ 8962 batches
+[2026-08-04 13:23:17.659902]: text ppl 25.3302 | rating loss 0.1366 | bal loss 2.0098 |  8000/ 8962 batches
+[2026-08-04 13:25:31.164740]: text ppl 25.3235 | rating loss 0.1344 | bal loss 2.0097 |  8200/ 8962 batches
+[2026-08-04 13:27:45.150177]: text ppl 25.2452 | rating loss 0.1300 | bal loss 2.0101 |  8400/ 8962 batches
+[2026-08-04 13:29:58.881654]: text ppl 24.3712 | rating loss 0.1316 | bal loss 2.0105 |  8600/ 8962 batches
+[2026-08-04 13:32:18.289175]: text ppl 24.6659 | rating loss 0.1300 | bal loss 2.0097 |  8800/ 8962 batches
+[2026-08-04 13:34:06.559581]: text ppl 25.4733 | rating loss 0.1286 | bal loss 2.0092 |  8962/ 8962 batches
+[2026-08-04 13:39:01.164011]: text ppl 29.0645 | valid loss 3.3695 on validation
+[2026-08-04 13:39:01.632660]: Trainable parameters saved to ../autodl-tmp/models/ClothingShoesAndJewelry/uiadapter_qwen/model.pt
+[2026-08-04 13:39:01.634393]: Training Rating Predictor.
+[2026-08-04 13:39:01.637937]: epoch 1
+[2026-08-04 13:39:39.199557]: loss 0.0459
+[2026-08-04 13:39:39.562069]: Validation RMSE  1.0619
+[2026-08-04 13:39:39.885268]: Test RMSE  1.0534
+[2026-08-04 13:39:39.886477]: Test MAE  0.8547
+[2026-08-04 13:39:39.896521]: epoch 2
+[2026-08-04 13:40:17.130679]: loss 0.0449
+[2026-08-04 13:40:17.492580]: Validation RMSE  1.0600
+[2026-08-04 13:40:17.801547]: Test RMSE  1.0507
+[2026-08-04 13:40:17.802705]: Test MAE  0.8440
+[2026-08-04 13:40:17.821608]: epoch 3
+[2026-08-04 13:40:55.063204]: loss 0.0445
+[2026-08-04 13:40:55.429807]: Validation RMSE  1.0603
+[2026-08-04 13:40:55.751750]: Test RMSE  1.0509
+[2026-08-04 13:40:55.752970]: Test MAE  0.8416
+[2026-08-04 13:40:55.752992]: epoch 4
+[2026-08-04 13:41:32.717023]: loss 0.0440
+[2026-08-04 13:41:33.074236]: Validation RMSE  1.0625
+[2026-08-04 13:41:33.383109]: Test RMSE  1.0522
+[2026-08-04 13:41:33.384253]: Test MAE  0.8306
+[2026-08-04 13:41:33.384271]: epoch 5
+[2026-08-04 13:42:11.978634]: loss 0.0435
+[2026-08-04 13:42:12.338694]: Validation RMSE  1.0630
+[2026-08-04 13:42:12.648002]: Test RMSE  1.0535
+[2026-08-04 13:42:12.649151]: Test MAE  0.8456
+[2026-08-04 13:42:12.649171]: Early stopping triggered. No improvement in validation loss.
+[2026-08-04 13:42:12.649187]: Loading best rating predictor weights...
+[2026-08-04 13:42:12.659333]: Training Rating Predictor.
+[2026-08-04 13:42:12.663440]: epoch 1
+[2026-08-04 13:42:51.071953]: loss 0.0446
+[2026-08-04 13:42:51.436137]: Validation RMSE  1.0612
+[2026-08-04 13:42:51.750779]: Test RMSE  1.0522
+[2026-08-04 13:42:51.752269]: Test MAE  0.8489
+[2026-08-04 13:42:51.772787]: epoch 2
+[2026-08-04 13:43:28.920826]: loss 0.0439
+[2026-08-04 13:43:29.280216]: Validation RMSE  1.0616
+[2026-08-04 13:43:29.592431]: Test RMSE  1.0519
+[2026-08-04 13:43:29.593787]: Test MAE  0.8424
+[2026-08-04 13:43:29.593811]: epoch 3
+[2026-08-04 13:44:06.702806]: loss 0.0432
+[2026-08-04 13:44:07.062138]: Validation RMSE  1.0629
+[2026-08-04 13:44:07.369167]: Test RMSE  1.0530
+[2026-08-04 13:44:07.370440]: Test MAE  0.8420
+[2026-08-04 13:44:07.370461]: epoch 4
+[2026-08-04 13:44:45.280053]: loss 0.0426
+[2026-08-04 13:44:45.648591]: Validation RMSE  1.0642
+[2026-08-04 13:44:45.969513]: Test RMSE  1.0538
+[2026-08-04 13:44:45.970918]: Test MAE  0.8405
+[2026-08-04 13:44:45.970944]: Early stopping triggered. No improvement in validation loss.
+[2026-08-04 13:44:45.970951]: Loading best rating predictor weights...
+================================================================================
+📊 [VRAM Profiling] Peak GPU Memory Allocated: 18.22 GB
+📊 [VRAM Profiling] Peak GPU Memory Reserved (Cached): 19.47 GB
+================================================================================
+GPU memory allocated: 8.44 GB
+GPU memory cached: 12.55 GB
+
+--- Trainable Parameters Summary (LLM base) ---
+Total parameters: 7,775,749,667
+Trainable parameters (LoRA + Embeddings): 160,133,155
+Trainable ratio: 2.06%
+------------------------------------
+[2026-08-04 13:46:41.699453]: Successfully loaded trainable parameters from ../autodl-tmp/models/ClothingShoesAndJewelry/uiadapter_qwen/model.pt
+[2026-08-04 13:46:41.813913]: Successfully loaded Rating Predictor weights from ../autodl-tmp/models/ClothingShoesAndJewelry/uiadapter_qwen/model.pt_rating.pt
+=========================================================================================
+[2026-08-04 13:51:34.829556]: text ppl 29.2974 on test | End of training
+[2026-08-04 13:51:34.829765]: Generating text
+[2026-08-04 15:22:00.601472]: RMSE  1.0522
+[2026-08-04 15:22:00.602716]: MAE  0.8489
+[2026-08-04 15:22:01.985430]: BLEU-1 13.5537
+[2026-08-04 15:22:02.606307]: BLEU-4  0.6312
+[2026-08-04 15:22:04.421179]: USR  0.3720 | USN    6667
+[2026-08-04 15:22:19.481061]: DIV  0.1398
+[2026-08-04 15:22:19.536372]: FCR  0.4380
+[2026-08-04 15:22:19.538194]: FMR  0.0995
+[2026-08-04 15:22:20.375535]: rouge_1/f_score 13.2247
+[2026-08-04 15:22:20.375610]: rouge_1/r_score 14.1723
+[2026-08-04 15:22:20.375622]: rouge_1/p_score 14.4904
+[2026-08-04 15:22:20.375629]: rouge_2/f_score  1.3090
+[2026-08-04 15:22:20.375635]: rouge_2/r_score  1.4922
+[2026-08-04 15:22:20.375641]: rouge_2/p_score  1.4152
+[2026-08-04 15:22:20.375647]: rouge_l/f_score 10.0900
+[2026-08-04 15:22:20.375653]: rouge_l/r_score 12.3567
+[2026-08-04 15:22:20.375659]: rouge_l/p_score 12.2861
+[2026-08-04 15:22:26.959257]: Generated text saved to (./outputs/ClothingShoesAndJewelry/1/uiadapter_qwen/generated.txt)
