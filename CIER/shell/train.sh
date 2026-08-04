@@ -40,7 +40,7 @@ TOP_K=2
 BAL_REG=0.1
 LORA_MODULES=2
 CKPT_DIR="./checkpoints/"
-MODEL_NAME="../autodl-fs/Qwen2.5-7B/"
+MODEL_NAME="../llms/Qwen2.5-7B/"
 LOG_NAME="train_${DATASET_NAME}_qwen.log"
 
 
