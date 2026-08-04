@@ -269,8 +269,8 @@ def main(args):
     
     module_list = ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
     target_modules = module_list[:args.lora_modules]  # Set as original paper: ["q_proj", "k_proj"]
-    #for split_index in ['1','2','3','4','5']:
-    for split_index in ['1']:
+    for split_index in ['1','2','3','4','5']:
+    #for split_index in ['1']:
         train_dataset, valid_dataset, test_dataset = dataset_split(dataset,split_index,args)
         train_set = MyDataset(train_dataset)
         valid_set = MyDataset(valid_dataset)
