@@ -75,7 +75,7 @@ pip install -r requirements.txt
 ## 📖 Usage
 
 ### 1. Download Datasets
-​    1). Download dataset from PEPLER Github: [Google Drive]([https://huggingface.co/datasets/Xiuze/XRec/tree/main](https://drive.google.com/drive/folders/1yB-EFuApAOJ0RzTI0VfZ0pignytguU0_)
+​    1). Download dataset from PEPLER Github: [Google Drive](https://drive.google.com/drive/folders/1yB-EFuApAOJ0RzTI0VfZ0pignytguU0_)
 
 - ClothingShoesAndJewelry.zip
 - MoviesAndTV.zip
