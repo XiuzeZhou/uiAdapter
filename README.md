@@ -73,11 +73,11 @@ pip install -r requirements.txt
 ## 📖 Usage
 
 ### 1. Download Datasets
-​    1). Download dataset from Hugging Face: [XRec](https://huggingface.co/datasets/Xiuze/XRec/tree/main)
+​    1). Download dataset from [Google Drive]([https://huggingface.co/datasets/Xiuze/XRec/tree/main](https://drive.google.com/drive/folders/1yB-EFuApAOJ0RzTI0VfZ0pignytguU0_))
 
-- [ClothingShoesAndJewelry.zip](https://huggingface.co/datasets/Xiuze/XRec/resolve/main/ClothingShoesAndJewelry.zip?download=true)
-- [MoviesAndTV.zip](https://huggingface.co/datasets/Xiuze/XRec/resolve/main/MoviesAndTV.zip?download=true)
-- [TripAdvisor.zip](https://huggingface.co/datasets/Xiuze/XRec/resolve/main/TripAdvisor.zip?download=true)
+- ClothingShoesAndJewelry.zip
+- MoviesAndTV.zip
+- TripAdvisor.zip
 
 ​    2). Move .zip files to `data/` and unzip. Organize the data as follows:
 
