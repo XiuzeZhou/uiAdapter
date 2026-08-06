@@ -1,6 +1,8 @@
-# uiAdapter: User-Item Adapter for LLM-based Explainable Recommendation Systems
+# Decoupling Collaborative and Semantic Tracks: A Plug-and-Play Parameter-Efficient Adapter for Explainable LLM Recommendation
 [![License](https://img.shields.io/badge/License-Apache%202.0-orange)](LICENSE)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-red)](https://pytorch.org/)
+
+uiAdapter: User-Item Adapter for LLM-based Explainable Recommendation Systems
 
 uiAdapter is an efficient fine-tuning strategy for LLM-based explainable recommendations. It decouples the adaptation processes of text and recommendation. 
 
