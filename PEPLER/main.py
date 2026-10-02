@@ -227,11 +227,6 @@ def generate(data):
                 gen_input_ids[b_idx, -1] = tokenizer.bos_token_id
                 attention_mask[b_idx, -1-p_len:] = 1
 
-            if args.model_type == 'uiadapter':
-                input_size = gen_input_ids.size(1)
-            else:
-                input_size = gen_input_ids.size(1) + 2
-
             generated_output = model.generate(
                 input_ids=gen_input_ids, 
                 max_new_tokens=args.words,
@@ -248,6 +243,7 @@ def generate(data):
             
             generated_ids = generated_output.sequences
             if args.model_type == 'uiadapter':
+                input_size = gen_input_ids.size(1)
                 ids = generated_ids[:, input_size:].tolist()
             else:
                 ids = generated_ids.tolist()
