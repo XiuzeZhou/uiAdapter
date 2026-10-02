@@ -250,7 +250,7 @@ def generate(data):
             if args.model_type == 'uiadapter':
                 ids = generated_ids[:, input_size:].tolist()
             else:
-                ids = generated_ids[:, 1:].tolist()
+                ids = generated_ids.tolist()
             idss_predict.extend(ids)
 
             # --- Rating Prediction ---
